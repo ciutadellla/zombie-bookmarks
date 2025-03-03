@@ -1,4 +1,5 @@
-# 🧟‍♂️ Zombie Bookmarks – Your bookmarks won’t die... but they’ll stay buried!
+# 🧟‍♂️ 
+# Zombie Bookmarks – Your bookmarks won’t die... but they’ll stay buried!
 
 Tired of your bookmarks being exposed to the living? **Zombie Bookmarks** keeps them locked away in an encrypted tomb, accessible only by you! Protect your secrets and keep your links safe from prying eyes, hackers, and even the zombie horde.  
 
