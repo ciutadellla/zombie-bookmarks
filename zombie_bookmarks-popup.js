@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         passwordForm: document.getElementById("passwordForm"),
         searchInput: document.getElementById("searchBookmarks"),
         bookmarkList: document.getElementById("bookmarkList"),
-    };
+	randomOpen: document.getElementById("randomOpen"),
+    	randomCount: document.getElementById("randomCount")
+    };   
 	
     document.getElementById('increment').addEventListener('click', function () {
         let input = document.getElementById('randomCount');
@@ -38,8 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
     
-    elements.randomOpen = document.getElementById("randomOpen");
-    elements.randomCount = document.getElementById("randomCount");
+
     elements.randomOpen.addEventListener("click", async () => {
         if (!sessionPassword) return alert("Session expired! Please unlock again.");
     
