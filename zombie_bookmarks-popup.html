@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="dark" data-theme="dark" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Bookmarks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-purple-900 text-purple-300 w-80 p-4 rounded-md border border-purple-700">
+    <div class="mb-4 flex flex-row"> 
+        <h2 class="text-3xl zombie-font">🧟‍♂️ Zombie Bookmarks</h2>
+    </div>
+
+    <!-- Login Section -->
+    <form id="passwordForm" class="flex space-x-4 w-full">
+        <div class="flex rounded-md overflow-hidden w-full">
+            <input type="password" id="password" placeholder="Enter Password" 
+                class="bg-purple-900 text-purple-400 px-2 w-full border border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-l-lg p-2" 
+                required />
+            <button type="submit" id="unlock" 
+                class="bg-purple-500 text-pink-200 border-purple-400 px-4 text-md font-semibold py-2 rounded-r-mg">
+                Unlock
+            </button>
+        </div>
+    </form>
+
+    <!-- Bookmarks Section (Hidden by Default) -->
+    <div id="bookmarksContainer" class="hidden flex flex-col items-center gap-3 mt-4">
+
+
+<div class="flex items-center gap-2 mb-2 p-2 bg-purple-900 text-purple-400 border border-purple-700 rounded-md">
+    <button id="decrement" class="p-2 bg-purple-500 text-white rounded-md">➖</button>
+    <input type="number" id="randomCount" value="1" min="1" max="100"
+        class="p-2 w-20 text-center bg-purple-900 text-purple-400 border border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-md">
+    <button id="increment" class="p-2 bg-purple-500 text-white rounded-md">➕</button>
+    <button title="Random Open" id="randomOpen"
+        class="focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 flex-auto px-2 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-md">
+        🎲
+    </button>
+</div>
+
+
+   
+        <form id="uploadForm" enctype="multipart/form-data" class="flex flex-row gap-2">
+        
+     
+        <div class="flex flex-row gap-2 mb-2 p-2 bg-purple-900 text-purple-400 border border-purple-700 rounded-md w-full">
+            <button title="Add Bookmark" id="addBookmark" class="focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 flex-auto px-2 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-md">🔖</button>
+            <button title="Import" id="import" class="focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 flex-auto px-2 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-md">📥</button>
+            <button title="Export" id="export" class="focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 flex-auto px-2 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-md">🥾</button>
+            <input type="file" id="uploadFile" class="hidden">
+            <button id="openOptions" class="focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 flex-auto px-2 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600"> ⚙️
+            </button>
+            <button title="Logout" id="logout" class="focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 flex-auto hidden px-2 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600">🚪</button>
+            <button title="Logout" id="logout" class="focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-500 flex-auto hidden px-2 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600">🚪</button>
+
+        </div>
+    </form>
+
+
+
+        <input type="text" id="searchBookmarks" placeholder="Search ..." 
+        class="mt-2 p-2 bg-purple-900 text-purple-400 w-full border border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 rounded-md ">
+        
+        <ul id="bookmarkList" class="flex flex-col-reverse divide-y-1 divide-y-reverse divide-purple-800 list-none"></ul>
+        <template id="bookmark-template">
+            <li class="flex items-center justify-between p-2 border-b border-gray-700 hover:bg-purple-800">
+                <a href="#" target="_blank" class="flex-grow pl-2 truncate text-purple-400 hover:none"></a>
+                <img class="favicon w-5 h-5 mx-2" alt="Favicon">
+                <button class="delete-btn text-red-500 hover:text-red-700 px-2">❌</button>
+                <button class="incogni-btn text-gray-400 hover:text-gray-600 px-2">👁️</button>
+            </li>
+        </template>
+
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="crypto.js"></script> <!-- Ensure this file exists -->
+    <script src="zombie_bookmarks-popup.js"></script>
+</body>
+</html>
