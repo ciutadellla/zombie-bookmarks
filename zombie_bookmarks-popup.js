@@ -15,9 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         searchInput: document.getElementById("searchBookmarks"),
         bookmarkList: document.getElementById("bookmarkList"),
     };
-
-
-
+	
     document.getElementById('increment').addEventListener('click', function () {
         let input = document.getElementById('randomCount');
         let currentValue = Number(input.value);
@@ -58,15 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             chrome.tabs.create({ url: bookmark.url });
         });
     });
-
-
-
-
-    function checkFile() {
-    
-            return true;
-
-    }
+    function checkFile() { return true; }
     function uploadFile() {
         var fileElement = document.getElementById("caca");
            var fileExtension = "";
@@ -102,13 +92,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             item.style.display = title.includes(query) ? "flex" : "none";
         });
     });
-	// const inputElement = document.getElementById("caca");
-	// inputElement.addEventListener("change", handleFiles, false);
-	// function handleFiles() {
-	// 	console.log("caca")
-	//   const fileList = this.files; /* now you can work with the file list */
-	// }
-
     
     chrome.storage.session.get(["sessionPassword"], async ({ sessionPassword: storedPassword }) => {
         storedPassword ? await unlockBookmarks(storedPassword) : toggleUI(true);
@@ -138,10 +121,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             await updateBookmarks([...await getBookmarks(), { title: tab.title, url: tab.url }]);
         });
     });
-    
-	// elements.importBtn.addEventListener("click", () => {
-	// 	if (!sessionPassword) return alert("Session expired! Please unlock again.");
-   
 
     elements.importBtn.addEventListener("click", () => {
         if (!sessionPassword) return alert("Session expired! Please unlock again.");
@@ -157,9 +136,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         fileInput.click(); // Trigger file selection
     });
-
-	// 	// fileInput.click(); // Trigger file selection
-	// });
 
     async function readAndImportFile(file) {
 		console.log("render")
@@ -256,21 +232,17 @@ document.addEventListener("DOMContentLoaded", async () => {
             const favicon = clone.querySelector(".favicon");
             const link = clone.querySelector("a");
     
-            // Set bookmark title & URL
             link.textContent = title;
             link.href = url;
     
-            // Generate Favicon URL (works for most websites)
             favicon.src = `https://www.google.com/s2/favicons?sz=32&domain=${new URL(url).hostname}`;
-            favicon.onerror = () => favicon.src = "default-favicon.png"; // Fallback if not found
+            favicon.onerror = () => favicon.src = "default-favicon.png"; 
     
-            // Delete button functionality
             clone.querySelector(".delete-btn").addEventListener("click", async () => {
                 bookmarks.splice(index, 1);
                 await updateBookmarks(bookmarks);
             });
     
-            // Open in incognito mode
             clone.querySelector(".incogni-btn").addEventListener("click", () => {
                 chrome.tabs.create({ active: false, url });
             });
