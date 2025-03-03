@@ -10,7 +10,7 @@ Tired of your bookmarks being exposed to the living? **Zombie Bookmarks** keeps 
 - 📥 **Import & Export (Encrypted)** – Easily transfer your bookmarks without exposing them to the world.  
 - ⚡ **Fast Search** – Instantly summon the bookmark you need from the depths of your collection.  
 - 🎲 **Random Bookmark Opener** – Feeling adventurous? Let fate (or the undead) decide which bookmark rises next!  
-- 💀 **Open Source** – No hidden traps! Inspect, modify, and contribute to the code—because transparency matters.  
+- 💀 **[Open Source](https://github.com/ciutadellla/zombie-bookmarks)** – No hidden traps! Inspect, modify, and contribute to the code—because transparency matters.  
 
 **Stay private. Stay secure. Stay... undead.** 🧟‍♂️🔗
 
