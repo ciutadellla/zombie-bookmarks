@@ -13,3 +13,4 @@ Tired of your bookmarks being exposed to the living? **Zombie Bookmarks** keeps 
 - 💀 **Open Source** – No hidden traps! Inspect, modify, and contribute to the code—because transparency matters.  
 
 **Stay private. Stay secure. Stay... undead.** 🧟‍♂️🔗
+
