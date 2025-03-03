@@ -40,19 +40,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
     
-
     elements.randomOpen.addEventListener("click", async () => {
         if (!sessionPassword) return alert("Session expired! Please unlock again.");
-    
         const bookmarks = await getBookmarks();
         if (!bookmarks.length) return alert("No bookmarks available!");
-
         let count = parseInt(elements.randomCount.value) || 1;
-        count = Math.min(count, bookmarks.length); // Ensure it doesn't exceed available bookmarks
-
-        const shuffled = bookmarks.sort(() => 0.5 - Math.random()); // Shuffle array
-        const selectedBookmarks = shuffled.slice(0, count); // Pick the first 'count' items
-
+        count = Math.min(count, bookmarks.length);
+        const shuffled = bookmarks.sort(() => 0.5 - Math.random()); 
+        const selectedBookmarks = shuffled.slice(0, count); 
         selectedBookmarks.forEach(bookmark => {
             chrome.tabs.create({ url: bookmark.url });
         });
